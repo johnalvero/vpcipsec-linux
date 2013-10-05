@@ -130,7 +130,7 @@ EOF
 ip a a $T1_IIP_CG dev $WAN_INT
 ip a a $T2_IIP_CG dev $WAN_INT
 
-service racoon rerestart
+service racoon restart
 service setkey restart
 
 # Tunnel should be up by now. Now setup BGP
