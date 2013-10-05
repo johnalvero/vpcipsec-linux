@@ -11,3 +11,10 @@ Usage:
 ./vpc.sh vpn.txt
 
 Note: Run the script as root user. Tested with Ubuntu 12.04.
+
+
+Ports to open:
+- UDP 500
+- AH protocol
+- ESP protocol
+- TCP 179
