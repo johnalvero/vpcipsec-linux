@@ -10,4 +10,4 @@ Usage:
 
 ./vpc.sh vpn.txt
 
-Note: Run the script as root user.
+Note: Run the script as root user. Tested with Ubuntu 12.04.
