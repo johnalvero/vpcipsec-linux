@@ -46,20 +46,20 @@ T2_NEIGHBOR_IP=$(cat $1 | grep -m 2 "Neighbor IP Address" | tail -1 | awk '{prin
 
 
 # Check weather we got all the values
-[ -z "$T1_OIP_CG" ] 		&& error "Could not extract T1_OIP_CG from $1."
-[ -z "$T1_OIP_PG" 		&& error "Could not extract $T1_OIP_PG from $1."
-[ -z "$T1_IIP_CG" ] 		&& error "Could not extract $T1_IIP_CG from $1."
-[ -z "$T1_IIP_PG" ] 		&& error "Could not extract $T1_IIP_PG from $1."
-[ -z "$T2_OIP_CG" ] 		&& error "Could not extract $T2_OIP_CG from $1."
-[ -z "$T2_OIP_PG" 		&& error "Could not extract $T2_OIP_PG from $1."
-[ -z "$T2_IIP_CG" ] 		&& error "Could not extract $T2_IIP_CG from $1."
-[ -z "$T2_IIP_PG" ] 		&& error "Could not extract $T2_IIP_PG from $1."
-[ -z "$T1_PSK" ]		&& error "Could not extract $T1_PSK from $1."
-[ -z "$T2_PSK" ] 		&& error "Could not extract $T2_PSK from $1."
-[ -z "$T1_REMOTE_AS" ] 		&& error "Could not extract $T1_REMOTE_AS from $1."
-[ -z "$T2_REMOTE_AS" ] 		&& error "Could not extract $T2_REMOTE_AS from $1."
-[ -z "$T1_NEIGHBOR_IP" ] 	&& error "Could not extract $T1_NEIGHBOR_IP from $1."
-[ -z "$T2_NEIGHBOR_IP" ] 	&& error "Could not extract $T2_NEIGHBOR_IP from $1."
+[ -z "$T1_OIP_CG" ]		&& error "Could not extract T1_OIP_CG from $1."
+[ -z "$T1_OIP_PG" ]		&& error "Could not extract T1_OIP_PG from $1."
+[ -z "$T1_IIP_CG" ]		&& error "Could not extract T1_IIP_CG from $1."
+[ -z "$T1_IIP_PG" ]		&& error "Could not extract T1_IIP_PG from $1."
+[ -z "$T2_OIP_CG" ]		&& error "Could not extract T2_OIP_CG from $1."
+[ -z "$T2_OIP_PG" ]		&& error "Could not extract T2_OIP_PG from $1."
+[ -z "$T2_IIP_CG" ]		&& error "Could not extract T2_IIP_CG from $1."
+[ -z "$T2_IIP_PG" ]		&& error "Could not extract T2_IIP_PG from $1."
+[ -z "$T1_PSK" ]		&& error "Could not extract T1_PSK from $1."
+[ -z "$T2_PSK" ]		&& error "Could not extract T2_PSK from $1."
+[ -z "$T1_REMOTE_AS" ]		&& error "Could not extract T1_REMOTE_AS from $1."
+[ -z "$T2_REMOTE_AS" ]		&& error "Could not extract T2_REMOTE_AS from $1."
+[ -z "$T1_NEIGHBOR_IP" ]	&& error "Could not extract T1_NEIGHBOR_IP from $1."
+[ -z "$T2_NEIGHBOR_IP" ]	&& error "Could not extract T2_NEIGHBOR_IP from $1."
 
 
 # Setkey config
