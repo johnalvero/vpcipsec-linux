@@ -43,7 +43,7 @@ T1_REMOTE_AS=$(cat $1 | grep -m 1 'Virtual Private  Gateway ASN' | tail -1 |  aw
 T2_REMOTE_AS=$(cat $1 | grep -m 2 'Virtual Private  Gateway ASN' | tail -1 |  awk '{print $7}')
 T1_NEIGHBOR_IP=$(cat $1 | grep -m 1 "Neighbor IP Address" | tail -1 | awk '{print $6}')
 T2_NEIGHBOR_IP=$(cat $1 | grep -m 2 "Neighbor IP Address" | tail -1 | awk '{print $6}')
-
+CONNECTION_ID=$(cat $1 | grep 'Your VPN Connection ID' | awk '{print $6}')
 
 # Check weather we got all the values
 [ -z "$T1_OIP_CG" ]		&& error "Could not extract T1_OIP_CG from $1."
@@ -93,7 +93,7 @@ spdadd $REMOTE_NET $T2_IIP_CG any -P in ipsec
 EOF
 
 # Pre-shared key file
-cat << EOF >> /etc/racoon/psk.txt
+cat << EOF > /etc/racoon/$CONNECTION_ID.txt
 # VPC IPSEC
 $T1_OIP_PG $T1_PSK
 $T2_OIP_PG $T2_PSK
@@ -105,7 +105,7 @@ cat << EOF > /etc/racoon/racoon.conf
 # VPC IPSEC
 
 log notify;
-path pre_shared_key "/etc/racoon/psk.txt";
+path pre_shared_key "/etc/racoon/$CONNECTION_ID.txt";
 
 remote $T2_OIP_PG {
         exchange_mode main;
