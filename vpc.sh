@@ -94,6 +94,9 @@ remote $T2_OIP_PG {
                 dh_group 2;
         }
         generate_policy off;
+        my_identifier address $T2_OIP_CG;
+	peers_identifier address $T2_OIP_PG;
+
 }
 
 remote $T1_OIP_PG {
@@ -106,6 +109,9 @@ remote $T1_OIP_PG {
                 dh_group 2;
         }
         generate_policy off;
+        my_identifier address $T1_OIP_CG;
+	peers_identifier address $T1_OIP_PG;
+
 }
 
 sainfo address $T1_IIP_CG any address $T1_IIP_PG any {
